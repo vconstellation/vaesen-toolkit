@@ -1,0 +1,26 @@
+[
+    {
+        "Id": 1,
+        "content": "Breathless messenger"
+    },
+    {
+        "Id": 2,
+        "content": "Letter by postal rider"
+    },
+    {
+        "Id": 3,
+        "content": "Telegraph message"
+    },
+    {
+        "Id": 4,
+        "content": "Conversation with the towns vicar"
+    },
+    {
+        "Id": 5,
+        "content": "Nailed box at the castle gate"
+    },
+    {
+        "Id": 6,
+        "content": "scruffy homing pigeon"
+    }
+]

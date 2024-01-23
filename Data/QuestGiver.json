@@ -1,0 +1,26 @@
+[
+    {
+        "Id": 1,
+        "content": "Eccentric scientist"
+    },
+    {
+        "Id": 2,
+        "content": "Traveling historian"
+    },
+    {
+        "Id": 3,
+        "content": "Faraway relative"
+    },
+    {
+        "Id": 4,
+        "content": "Child of the former member of the society"
+    },
+    {
+        "Id": 5,
+        "content": "Local priest or bishop"
+    },
+    {
+        "Id": 6,
+        "content": "Village council / village elder"
+    }
+]
