@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VaesenToolkit.Stores;
 using VaesenToolkit.ViewModels;
 
 namespace VaesenToolkit.Views
@@ -21,11 +22,17 @@ namespace VaesenToolkit.Views
     /// </summary>
     public partial class Temp : Page
     {
-        NoteViewModel noteViewModel;
+        private readonly SelectedNoteStore _selectedNoteStore;
+        // NoteViewModel noteViewModel;
         public Temp()
         {
             InitializeComponent();
-            noteViewModel = new NoteViewModel();
+            _selectedNoteStore = new SelectedNoteStore();
+
+            // DataContext = _selectedNoteStore;
+            // noteViewModel = new NoteViewModel();
+
+            this.DataContext = new NoteViewModel(_selectedNoteStore);
         }
     }
 }

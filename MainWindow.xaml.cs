@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VaesenToolkit.Middleware;
 using VaesenToolkit.Models;
+using VaesenToolkit.Stores;
 using VaesenToolkit.Views;
 
 namespace VaesenToolkit
@@ -21,12 +22,11 @@ namespace VaesenToolkit
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
-            var path = Directory.GetCurrentDirectory();
-            Console.WriteLine(path);
-
+            
             /* var myTabItems = new List<TabItem>
             {
                 new TabItem

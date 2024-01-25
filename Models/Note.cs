@@ -10,6 +10,11 @@ namespace VaesenToolkit.Models
     {
         public int Id { get; set; }
         public string noteContext { get; set; }
-        public List<Note> notes { get; set; }
+
+        public Note(int id, string noteContext) 
+        {
+            this.Id = id;
+            this.noteContext = noteContext;
+        }
     }
 }

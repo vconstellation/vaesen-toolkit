@@ -4,7 +4,6 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VaesenToolkit.Views"
-      xmlns:viewModels="using:MyApp.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Temp">
@@ -12,29 +11,34 @@
     <Grid>
         <Grid Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <TextBlock>Test dupa 332</TextBlock>
-            <ListBox ItemsSource="{Binding notes}">
-                <ListBox.ItemTemplate>
+            <ListView SelectedItem="{Binding NoteListingViewModel.SelectedNoteListingItemViewModel}" ItemsSource="{Binding NoteListingViewModel.noteListingItemViewModels}">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding noteContent}" />
-                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />                             
+                                <ColumnDefinition Width="*" />                             
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding NoteContent}" />
+                            <Button Grid.Column="1" Command="{Binding EditCommand}" Content="Edit"/>
+                            <Button Grid.Column="2" Command="{Binding DeleteCommand}" Content="Delete"/>
+                        </Grid>                        
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <StackPanel>
-                <TextBox x:Name="txtName" />
-                <Button x:Name="btnAdd" Command="{Binding AddNoteCommand}">Add</Button>
-            </StackPanel>
+                </ListView.ItemTemplate>              
+            </ListView>
+            <TextBlock Grid.Column="1" DataContext="{Binding NoteDetailsViewModel}">
+                <TextBlock Text="{Binding detailContent}" />
+            </TextBlock>
 
         </Grid>
     </Grid>
